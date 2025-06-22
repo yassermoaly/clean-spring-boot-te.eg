@@ -9,8 +9,7 @@ import apis.contracts.response.GetCityResponse;
 import data.layer.entities.City;
 
 @Mapper(componentModel = "spring")
-public interface CityMapper {
-    
+public interface CityMapper {   
 	City AddToEntity(AddCityRequest addCityRequest);
 	City UpdateToEntity(UpdateCityRequest updateCityRequest);
     GetCityResponse toDto(City city);	

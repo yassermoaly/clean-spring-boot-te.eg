@@ -1,6 +1,8 @@
 package apis.contracts.common;
 
+import lombok.Data;
 
+@Data
 public class GResponse<T> {
 
     private boolean success;

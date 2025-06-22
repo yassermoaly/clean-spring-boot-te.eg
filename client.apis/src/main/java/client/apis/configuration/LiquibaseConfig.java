@@ -31,7 +31,7 @@ public class LiquibaseConfig {
     SpringLiquibase liquibaseMain(@Qualifier("mainDataSource") DataSource dataSource) {
         SpringLiquibase liquibase = new SpringLiquibase();
         liquibase.setDataSource(dataSource);
-        liquibase.setChangeLog("classpath:/db/changelog/main/db.changelog-master.xml");
+        liquibase.setChangeLog("classpath:/db/changelog/main-db/db.changelog-master.xml");
         liquibase.setContexts("mainDataSource");
         return liquibase;
     }
@@ -40,7 +40,7 @@ public class LiquibaseConfig {
     SpringLiquibase liquibaseLogging(@Qualifier("loggingDataSource") DataSource dataSource) {
         SpringLiquibase liquibase = new SpringLiquibase();
         liquibase.setDataSource(dataSource);
-        liquibase.setChangeLog("classpath:/db/changelog/logs/db.changelog-master.xml");
+        liquibase.setChangeLog("classpath:/db/changelog/logs-db/db.changelog-master.xml");
         liquibase.setContexts("loggingDataSource");
         return liquibase;
     }

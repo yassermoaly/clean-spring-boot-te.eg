@@ -6,7 +6,6 @@
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <changeSet author="create-db-schema" id="20251906-create-db-schema">
-     	<sqlFile path="/scripts/main/20251906-create-db-schema.sql"/>  
-     	<sqlFile path="/scripts/main/20251907-add-cities.sql"/>          
+     	<sqlFile path="/scripts/logs-db/20250619140000-create-db-schema.sql"/>    
     </changeSet>   
 </databaseChangeLog>
