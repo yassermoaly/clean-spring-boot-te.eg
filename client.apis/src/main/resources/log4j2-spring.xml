@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+	<Properties>
+		<Property name="url">${sys:logging.datasource.url:-${spring:logging.datasource.url}}</Property>
+		<Property name="driver">${sys:logging.datasource.driver-class-name:-${spring:logging.datasource.driver-class-name}}</Property>
+		<Property name="user">${sys:logging.datasource.username:-${spring:logging.datasource.username}}</Property>
+		<Property name="pass">${sys:logging.datasource.password:-${spring:logging.datasource.password}}</Property>
+	</Properties>
+	<Appenders>
+		<!-- Console appender (standard output) -->
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="[%d{HH:mm:ss}] %-5level %logger - %msg%n"/>
+		</Console>
+		<!-- JDBC appender for logging to SQL Server -->
+		<JDBC name="DatabaseAppender" tableName="logs">
+			<DriverManager
+    connectionString="${url}"
+    driverClassName="${driver}"
+    userName="${user}"
+    password="${pass}"/>
+			<Column name="event_date" isEventTimestamp="true"/>
+			<Column name="level" pattern="%level"/>
+			<Column name="logger" pattern="%logger"/>
+			<Column name="message" pattern="%message"/>
+			<Column name="exception" pattern="%ex{full}"/>
+		</JDBC>
+	</Appenders>
+	<Loggers>
+		<Root>
+			<AppenderRef ref="Console"/>			
+			<!-- DO NOT add DatabaseAppender here, will be added programatically to run after liqubase -->
+		</Root>
+	</Loggers>
+</Configuration>

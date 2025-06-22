@@ -1,0 +1,64 @@
+{
+  "properties": [
+    {
+      "name": "logging.datasource.url",
+      "type": "java.lang.String",
+      "description": "JDBC URL of the datasource used for writing application logs."
+    },
+    {
+      "name": "logging.datasource.username",
+      "type": "java.lang.String",
+      "description": "Username for authenticating to the logging datasource."
+    },
+    {
+      "name": "logging.datasource.password",
+      "type": "java.lang.String",
+      "description": "Password for authenticating to the logging datasource."
+    },
+    {
+      "name": "logging.datasource.driver-class-name",
+      "type": "java.lang.String",
+      "description": "Fully qualified JDBC driver class name for the logging datasource."
+    },
+    {
+      "name": "rate.limit.capacity",
+      "type": "java.lang.Number",
+      "description": "Maximum number of requests allowed in a burst for each client."
+    },
+    {
+      "name": "rate.limit.tokens",
+      "type": "java.lang.Number",
+      "description": "Number of tokens to refill into the bucket at each refill interval."
+    },
+    {
+      "name": "rate.limit.duration-minutes",
+      "type": "java.lang.Number",
+      "description": "Refill interval in minutes during which the specified tokens are added."
+    },
+    {
+      "name": "rate.limit.cache-expiry-minutes",
+      "type": "java.lang.Number",
+      "description": "Time-to-live (in seconds) for each client’s rate-limit bucket in the in-memory cache."
+    },
+    {
+      "name": "security.cros.allowed-origins",
+      "type": "java.lang.String",
+      "description": "Comma-separated list of allowed origins for CORS requests (e.g., https://example.com)."
+    },
+    {
+      "name": "security.cros.allowed-methods",
+      "type": "java.lang.String",
+      "description": "Comma-separated list of allowed HTTP methods for CORS (e.g., GET, POST, PUT)."
+    },
+    {
+      "name": "security.cros.allowed-headers",
+      "type": "java.lang.String",
+      "description": "Comma-separated list of HTTP headers that are allowed in CORS requests."
+    },
+    {
+      "name": "security.cros.allowed-allow-credentials",
+      "type": "java.lang.Number",
+      "description": "Flag (1 or 0) indicating whether user credentials (cookies, authorization headers) are allowed in CORS requests."
+    }
+  ]
+}
